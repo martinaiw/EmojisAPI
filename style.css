@@ -94,3 +94,52 @@ h1 {
     font-size: 0.85rem;
     margin-top: 5px;
 }
+
+
+@keyframes spin-y {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.spin-y-animation {
+    animation: spin-y 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emoji-card .char {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    backface-visibility: visible; 
+}
+
+.emoji-card {
+    perspective: 1000px;
+}
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 41, 59, 0.9); 
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 1000;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast.hidden {
+    opacity: 0;
+    bottom: 10px;
+    pointer-events: none;
+}
+
+#copied-emoji {
+    font-size: 1.2rem;
+}
